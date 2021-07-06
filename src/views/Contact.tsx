@@ -13,7 +13,7 @@ function Contact() {
   const [darkMode, setDarkMode] = useState(userPrefersDark);
 
 
-  const handleToggle = (e) => {
+  const handleToggle = (e:any) => {
       setDarkMode(e.target.checked);
       localStorage.setItem("darkMode",e.target.checked);
   };
@@ -34,7 +34,8 @@ function Contact() {
                   <Link to='/'><li>Home</li></Link>
                   <Link to='/skills'><li>Skills</li></Link>
                   <Link to='/projects'><li>Projects</li></Link>
-                  <Link><li>Resume</li></Link>
+                  <a href='#!'><li>Resume</li></a>
+                  
                 </ul>
 
 

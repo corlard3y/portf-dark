@@ -1,6 +1,5 @@
 import React,{useState} from 'react';
 import '../App.css';
-import avatar from '../images/image.png';
 import { AiOutlineMenu,AiOutlineGithub,AiOutlineTwitter} from 'react-icons/ai';
 import {Link} from 'react-router-dom';
 
@@ -10,11 +9,11 @@ const userPrefersDark = localStorage.darkMode
                         window.matchMedia("(prefers-color-scheme:dark)").matches;
 
 
-function Home() {
+function Project() {
   const [darkMode, setDarkMode] = useState(userPrefersDark);
 
 
-  const handleToggle = (e) => {
+  const handleToggle = (e:any) => {
       setDarkMode(e.target.checked);
       localStorage.setItem("darkMode",e.target.checked);
   };
@@ -32,9 +31,9 @@ function Home() {
 
             <nav className='app_nav'>
                 <ul className='app_nav_listing'>
+                  <Link to='/'><li>Home</li></Link>
                   <Link to='/skills'><li>Skills</li></Link>
-                  <Link to='/projects'><li>Projects</li></Link>
-                  <Link><li>Resume</li></Link>
+                  <a href='#!'><li>Resume</li></a>
                   <Link to='/contact'><li>Contact</li></Link>
                 </ul>
 
@@ -56,25 +55,14 @@ function Home() {
 
 
         <main className='app_body'>
-            <div className='avatar'>
-                  <img src={avatar} alt='' className='avatar_img'/>
+
+            <div className='app_loading'>
+                ...Coming soon
             </div>
 
-            <h2 className='text_body text_body_greeting' > Hi,I'm Kolade✌🏾</h2>
-
-            <h3 className='text_body text_body_heading'  >
-              <span className='first-word'>Full-Stack</span> Software Developer/Engineer.
-            </h3>
-
-            <p className='text_body text_body_details' >
-            I am a <span className="text_body_bold">Software Engineer </span>with hands on experience developing websites, full-stack web applications and APIs.
-
-            </p>
-
-            <button className='btn'>Connect with me</button>
         </main>
     </div>
   );
 }
 
-export default Home;
+export default Project;
